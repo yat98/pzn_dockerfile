@@ -15,3 +15,9 @@ sudo docker container logs command
 #LABEL
 sudo docker build -t yattt/label label
 sudo docker image inspect yattt/label  
+
+#ADD
+sudo docker image rm yattt/add    
+sudo docker container create --name add yattt/add 
+sudo docker container start add
+sudo docker container logs add    
