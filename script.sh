@@ -27,3 +27,9 @@ sudo docker build -t yattt/copy copy
 sudo docker container create --name copy yattt/copy 
 sudo docker container start copy 
 sudo docker container logs copy
+
+#IGNORE
+sudo docker build -t yattt/ignore ignore
+sudo docker container create --name ignore yattt/ignore
+sudo docker container start ignore    
+sudo docker container logs ignore    
