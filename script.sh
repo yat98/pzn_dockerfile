@@ -20,4 +20,10 @@ sudo docker image inspect yattt/label
 sudo docker image rm yattt/add    
 sudo docker container create --name add yattt/add 
 sudo docker container start add
-sudo docker container logs add    
+sudo docker container logs add   
+
+#COPY
+sudo docker build -t yattt/copy copy 
+sudo docker container create --name copy yattt/copy 
+sudo docker container start copy 
+sudo docker container logs copy
