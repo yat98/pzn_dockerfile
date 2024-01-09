@@ -33,3 +33,8 @@ sudo docker build -t yattt/ignore ignore
 sudo docker container create --name ignore yattt/ignore
 sudo docker container start ignore    
 sudo docker container logs ignore    
+
+#EXPOSE
+sudo docker build -t yattt/expose expose
+sudo docker container create --name expose -p 8080:8080 yattt/expose
+sudo docker container ls 
