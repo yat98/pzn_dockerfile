@@ -38,3 +38,9 @@ sudo docker container logs ignore
 sudo docker build -t yattt/expose expose
 sudo docker container create --name expose -p 8080:8080 yattt/expose
 sudo docker container ls 
+
+#ENV
+sudo docker build -t yattt/env env 
+sudo docker container create --name env --env APP_PORT=9090 -p 9090:9090 yattt/env
+sudo docker container start env
+sudo docker container logs env
