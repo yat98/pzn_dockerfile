@@ -44,3 +44,16 @@ sudo docker build -t yattt/env env
 sudo docker container create --name env --env APP_PORT=9090 -p 9090:9090 yattt/env
 sudo docker container start env
 sudo docker container logs env
+
+#VOLUME
+sudo docker build -t yattt/volume volume  
+sudo docker image inspect yattt/volume
+sudo docker container create --name volume --env APP_PORT=9090 -p 9090:9090 yattt/volume
+sudo docker container start volume
+sudo docker image inspect yattt/volume
+sudo docker container inspect volume
+sudo docker volume ls
+#VOLUME BACKUP
+sudo docker container start volume
+sudo docker container exec -i -t volume /bin/sh   
+sudo docker container run --rm --name ubuntu --mount "type=bind,source=/home/yat/Desktop/backup,destination=/backup" --mount "type=volume,source=b51a959ea89beb68824f3a0a357d0b49e4c2f03d6e5c62ccbceb45640b5f8708,destination=/logs" ubuntu:latest tar cvf /backup/backup.tar.gz /logs
