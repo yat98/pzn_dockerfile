@@ -57,3 +57,12 @@ sudo docker volume ls
 sudo docker container start volume
 sudo docker container exec -i -t volume /bin/sh   
 sudo docker container run --rm --name ubuntu --mount "type=bind,source=/home/yat/Desktop/backup,destination=/backup" --mount "type=volume,source=b51a959ea89beb68824f3a0a357d0b49e4c2f03d6e5c62ccbceb45640b5f8708,destination=/logs" ubuntu:latest tar cvf /backup/backup.tar.gz /logs
+
+#WORKDIR
+sudo docker build -t yattt/workdir workdir
+sudo docker container create --name workdir --env APP_PORT=9090 -p 9090:9090 yattt/workdir
+sudo docker container start workdir
+sudo docker container exec -i -t workdir /bin/sh 
+sudo docker container stop workdir
+
+
