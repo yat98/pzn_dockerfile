@@ -65,4 +65,9 @@ sudo docker container start workdir
 sudo docker container exec -i -t workdir /bin/sh 
 sudo docker container stop workdir
 
-
+#USER
+sudo docker build -t yattt/user user
+sudo docker container create --name user --env APP_PORT=8080 -p 8080:8080 yattt/user
+sudo docker container start user
+sudo docker container exec -i -t user /bin/sh 
+sudo docker container stop user
