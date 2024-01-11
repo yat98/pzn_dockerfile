@@ -79,5 +79,14 @@ sudo docker container start arg
 sudo docker container exec -i -t arg /bin/sh 
 sudo docker container stop arg
 
+#HEALTHCHECK
+sudo docker build -t yattt/health health
+sudo docker container create --name health -p 8080:8080 yattt/health
+sudo docker container start health
+sudo docker container ls
+sudo docker container inspect health
+
+
+
 
 
