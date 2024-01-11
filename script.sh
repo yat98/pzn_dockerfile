@@ -86,6 +86,13 @@ sudo docker container start health
 sudo docker container ls
 sudo docker container inspect health
 
+#ENTRYPOINT
+sudo docker build -t yattt/entrypoint entrypoint
+sudo docker container create --name entrypoint -p 8080:8080 yattt/entrypoint
+sudo docker container start entrypoint
+sudo docker container exec -i -t entrypoint /bin/sh 
+
+
 
 
 
