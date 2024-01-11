@@ -71,3 +71,13 @@ sudo docker container create --name user --env APP_PORT=8080 -p 8080:8080 yattt/
 sudo docker container start user
 sudo docker container exec -i -t user /bin/sh 
 sudo docker container stop user
+
+#ARGUMENT
+sudo docker build -t yattt/arg arg --build-arg app=index 
+sudo docker container create --name arg -p 8080:8080 yattt/arg
+sudo docker container start arg
+sudo docker container exec -i -t arg /bin/sh 
+sudo docker container stop arg
+
+
+
