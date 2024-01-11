@@ -92,6 +92,15 @@ sudo docker container create --name entrypoint -p 8080:8080 yattt/entrypoint
 sudo docker container start entrypoint
 sudo docker container exec -i -t entrypoint /bin/sh 
 
+#MULTI STAGE BUILD
+sudo docker build -t yattt/multi-stage-build multi-stage-build
+sudo docker container create --name multi-stage-build -p 8080:8080 yattt/multi-stage-build
+sudo docker container start multi-stage-build
+sudo docker container exec -i -t multi-stage-build /bin/sh 
+
+
+
+
 
 
 
